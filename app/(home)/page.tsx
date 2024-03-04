@@ -5,11 +5,11 @@ import Body from "./components/Body";
 
 function page() {
   return (
-    <div className="min-h-screen">
+    <>
       <Header />
       <Body />
       <Footer />
-    </div>
+    </>
   );
 }
 
