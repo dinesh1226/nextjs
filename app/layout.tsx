@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { apercuLight } from "@/public/fonts";
+import { apercuLight, gooperRegular } from "@/public/fonts";
 
 export const metadata: Metadata = {
   title: "Dinesh-Portfolio",

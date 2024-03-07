@@ -1,24 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import BackgroundGradientAnimation from "@/app/(home)/components/ui/background-gradient-animation";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
+import { AlignJustify, X, ChevronDown } from "lucide-react";
+import Hero from "./Hero";
 
 function Header() {
+  const [hamburger, sethamburger] = useState(false);
+  const hamburgerBtn = () => {
+    sethamburger((prev) => !prev);
+  };
+
   return (
     <>
-      <nav className="">
+      <nav className="px-10 pt-10 sm:px-40 sm:pt-7">
         {/* <Image
           src="/blur.png"
           layout="fill"
           className="absolute top-0 -z-4 opacity-15 "
           alt="zz"
         /> */}
-        <div className=" flex justify-between items-center font-gooperSemiBold pt-6 px-36 w-full">
-          <Link href={"/"} className="font-gooperSemiBold text-2xl">
+        <div className=" flex justify-between items-center font-gooperSemiBold w-full relative">
+          <Link href={"/"} className="font-gooperSemiBold text-3xl">
             dinesh
           </Link>
-          <div className="flex gap-10 text-sm">
+          <div
+            className="sm:hidden cursor-pointer delay-300"
+            onClick={hamburgerBtn}
+          >
+            {hamburger ? (
+              <X className="absolute z-20 top-2 right-0" size={29} />
+            ) : (
+              <AlignJustify size={29} />
+            )}
+          </div>
+          <div
+            className={`sm:flex gap-10 text-3xl sm:text-sm ${
+              hamburger
+                ? "flex flex-col z-10  absolute top-[375px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black justify-center items-center w-screen h-screen text-lg"
+                : "hidden"
+            } `}
+          >
             <Link
               className="font-gooperSemiBold flex justify-between gap-1"
               href={"/work"}
@@ -37,29 +61,7 @@ function Header() {
           </div>
         </div>
       </nav>
-
-      <div className="flex flex-col gap-10 justify-center pl-40 h-[93vh]">
-        <h1 className="text-6xl">dinesh k</h1>
-        <h2 className="text-2xl leading-loose">
-          is a full stack product designer creating digital experiences that{" "}
-          <br />
-          simplify, uplift, and nurture human connection.
-        </h2>
-        <div className="flex gap-12">
-          <div>
-            <h2>currently</h2>
-            <p>a product design intern @ Spotify</p>
-          </div>
-
-          <div>
-            <h2>driven by</h2>
-            <p>
-              driven by empathetic storytelling, human connection, & <br />
-              tech for social good
-            </p>
-          </div>
-        </div>
-      </div>
+      <Hero />
       <BackgroundGradientAnimation />
     </>
   );

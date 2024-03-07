@@ -7,9 +7,9 @@ const words = `let’s build something impactful.`;
 function Footer() {
   return (
     <>
-      <div className="h-[15rem] w-full dark:bg-black bg-black  dark:bg-dot-white/[0.1] bg-dot-white/[0.2] relative flex flex-col justify-center gap-7 pl-[10rem] border-t-[1px] border-gray-500">
+      <div className="sm:pl-72 px-10 h-[30vh] w-full dark:bg-black bg-black  dark:bg-dot-white/[0.1] bg-dot-white/[0.2] relative flex flex-col justify-center gap-7 border-t-[1px] border-gray-500">
         <TextGenerateEffect
-          className="text-left text-xl uppercase "
+          className="text-left text-xl uppercase"
           words={words}
         />
         <div className="text-white flex gap-10 underline">
