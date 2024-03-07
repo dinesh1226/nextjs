@@ -14,14 +14,22 @@ function Footer() {
         />
         <div className="text-white flex gap-10 underline">
           <div className="flex flex-col gap-1">
-            <Link href={""}>Work↗</Link>
-            <Link href={""}>About↗</Link>
-            <Link href={""}>Resume↗</Link>
+            <Link href={"/work"}>Work↗</Link>
+            <Link href={"/about"}>About↗</Link>
+            <Link
+              href={
+                "https://drive.google.com/file/d/1szgyykDJDPBlitMu1cEYgRSCUSNsxs6c/view?usp=sharing"
+              }
+            >
+              Resume↗
+            </Link>
           </div>
           <div className="flex flex-col gap-1">
-            <Link href={""}>LinkedIn↗</Link>
-            <Link href={""}>Email↗</Link>
-            <Link href={""}>Github↗</Link>
+            <Link href={"https://www.linkedin.com/in/durgadinesh"}>
+              LinkedIn↗
+            </Link>
+            <Link href={"mailto:durgadinesh46@gmail.com"}>Email↗</Link>
+            <Link href={"https://github.com/dinesh1226"}>Github↗</Link>
           </div>
         </div>
       </div>
